@@ -81,7 +81,7 @@ public class EmployeeService {
     // 3.9 - Imprimir o funcionário com a maior idade, exibir os atributos: nome e idade.
     public void printOldestEmployee() {
         Employee oldest = employees.stream()
-                .min(Comparator.comparing(EmployeeService::calculateAge))
+                .max(Comparator.comparing(EmployeeService::calculateAge)) // pegar o maior valor de idade
                 .orElse(null);
 
         if (oldest != null) {
